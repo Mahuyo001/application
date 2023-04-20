@@ -1,0 +1,52 @@
+[Log Entry]
+4/20/2023 4/20/2023 5:08:01 PM
+Provide value on 'System.Windows.Baml2006.TypeConverterMarkupExtension' threw an exception.
+   at System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   at System.Windows.Application.LoadBamlStreamWithSyncInfo(Stream stream, ParserContext pc)
+   at System.Windows.Application.LoadComponent(Uri resourceLocator, Boolean bSkipJournaledProperties)
+   at System.Windows.Application.DoStartup()
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+The image data generated an overflow during processing.
+   at System.Windows.Media.Imaging.ColorConvertedBitmap.FinalizeCreation()
+   at System.Windows.Media.Imaging.ColorConvertedBitmap..ctor(BitmapSource source, ColorContext sourceColorContext, ColorContext destinationColorContext, PixelFormat format)
+   at System.Windows.Media.Imaging.BitmapSource.CreateCachedBitmap(BitmapFrame frame, BitmapSourceSafeMILHandle wicSource, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, BitmapPalette palette)
+   at System.Windows.Media.Imaging.BitmapFrameDecode.FinalizeCreation()
+   at System.Windows.Media.Imaging.BitmapFrameDecode..ctor(Int32 frameNumber, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, BitmapDecoder decoder)
+   at System.Windows.Media.Imaging.BitmapDecoder.SetupFrames(BitmapDecoder decoder, ReadOnlyCollection`1 frames)
+   at System.Windows.Media.Imaging.BitmapDecoder.get_Frames()
+   at System.Windows.Media.Imaging.BitmapFrame.CreateFromUriOrStream(Uri baseUri, Uri uri, Stream stream, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, RequestCachePolicy uriCachePolicy)
+   at System.Windows.Media.ImageSourceConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.Windows.Baml2006.TypeConverterMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
+   at MS.Internal.Xaml.Runtime.ClrObjectRuntime.CallProvideValue(MarkupExtension me, IServiceProvider serviceProvider)
+Overflow or underflow in the arithmetic operation.
+
+[Log Entry]
+4/20/2023 4/20/2023 5:12:02 PM
+Provide value on 'System.Windows.Baml2006.TypeConverterMarkupExtension' threw an exception.
+   at System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   at System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   at System.Windows.Application.LoadBamlStreamWithSyncInfo(Stream stream, ParserContext pc)
+   at System.Windows.Application.LoadComponent(Uri resourceLocator, Boolean bSkipJournaledProperties)
+   at System.Windows.Application.DoStartup()
+   at System.Windows.Application.<.ctor>b__1_0(Object unused)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+The image data generated an overflow during processing.
+   at System.Windows.Media.Imaging.ColorConvertedBitmap.FinalizeCreation()
+   at System.Windows.Media.Imaging.ColorConvertedBitmap..ctor(BitmapSource source, ColorContext sourceColorContext, ColorContext destinationColorContext, PixelFormat format)
+   at System.Windows.Media.Imaging.BitmapSource.CreateCachedBitmap(BitmapFrame frame, BitmapSourceSafeMILHandle wicSource, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, BitmapPalette palette)
+   at System.Windows.Media.Imaging.BitmapFrameDecode.FinalizeCreation()
+   at System.Windows.Media.Imaging.BitmapFrameDecode..ctor(Int32 frameNumber, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, BitmapDecoder decoder)
+   at System.Windows.Media.Imaging.BitmapDecoder.SetupFrames(BitmapDecoder decoder, ReadOnlyCollection`1 frames)
+   at System.Windows.Media.Imaging.BitmapDecoder.get_Frames()
+   at System.Windows.Media.Imaging.BitmapFrame.CreateFromUriOrStream(Uri baseUri, Uri uri, Stream stream, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, RequestCachePolicy uriCachePolicy)
+   at System.Windows.Media.ImageSourceConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.Windows.Baml2006.TypeConverterMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
+   at MS.Internal.Xaml.Runtime.ClrObjectRuntime.CallProvideValue(MarkupExtension me, IServiceProvider serviceProvider)
+Overflow or underflow in the arithmetic operation.
+

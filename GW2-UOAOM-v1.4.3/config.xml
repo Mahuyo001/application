@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<UserConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BinFolder>bin64</BinFolder>
+  <LaunchGame>false</LaunchGame>
+  <GamePath>C:\Program Files\Guild Wars 2</GamePath>
+  <ExeName>Gw2-64.exe</ExeName>
+  <Culture>en-US</Culture>
+  <AddonsList Hash="2be1ced9e0efeba53cebe5d4e0ad12c88023d5e7" />
+</UserConfig>

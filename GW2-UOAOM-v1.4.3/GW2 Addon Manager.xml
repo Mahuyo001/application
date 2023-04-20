@@ -1,0 +1,516 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GW2 Addon Manager</name>
+    </assembly>
+    <members>
+        <member name="T:GW2_Addon_Manager.App.Configuration.IConfigurationManager">
+            <summary>
+                Manager responsible for all operations related to user configuration.
+                Because it is not static, it can be mocked and used in tests.
+                <seealso cref="P:GW2_Addon_Manager.App.Configuration.IConfigurationManager.UserConfig" />.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.App.Configuration.IConfigurationManager.ApplicationVersion">
+            <summary>
+                Formatted application assembly version.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.App.Configuration.IConfigurationManager.UserConfig">
+            <summary>
+                User configuration object.
+                It is deserialized from XML file once and then stored in memory.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.App.Configuration.IConfigurationManager.SaveConfiguration">
+            <summary>
+                Serializes configuration object to XML, and saves it to file.
+            </summary>
+        </member>
+        <member name="T:GW2_Addon_Manager.App.Configuration.ConfigurationManager">
+            <inheritdoc />
+        </member>
+        <member name="P:GW2_Addon_Manager.App.Configuration.ConfigurationManager.ApplicationVersion">
+            <inheritdoc />
+        </member>
+        <member name="P:GW2_Addon_Manager.App.Configuration.ConfigurationManager.UserConfig">
+            <inheritdoc />
+        </member>
+        <member name="M:GW2_Addon_Manager.App.Configuration.ConfigurationManager.SaveConfiguration">
+            <inheritdoc />
+        </member>
+        <member name="T:GW2_Addon_Manager.App.App">
+            <summary>
+            Interaction logic for App.xaml. Currently, the functions here are dedicated solely to application-wide exception handling and error logging.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.App.App.AppDispatcherUnhandledException(System.Object,System.Windows.Threading.DispatcherUnhandledExceptionEventArgs)">
+            <summary>
+            Displays a message and exits when an exception is thrown.
+            </summary>
+            <param name="sender">The object sending the exception.</param>
+            <param name="e">The exception information.</param>
+        </member>
+        <member name="M:GW2_Addon_Manager.App.App.ShowUnhandledException(System.Windows.Threading.DispatcherUnhandledExceptionEventArgs)">
+            <summary>
+            Displays an error message when an unhandled exception is thrown.
+            </summary>
+            <param name="e">The exception information.</param>
+        </member>
+        <member name="M:GW2_Addon_Manager.App.App.ShowUnhandledException(System.UnhandledExceptionEventArgs)">
+            <summary>
+            Displays an error message when an unhandled exception is thrown.
+            </summary>
+            <param name="e">The exception information.</param>
+        </member>
+        <member name="M:GW2_Addon_Manager.App.App.LogError(System.String,System.Windows.Threading.DispatcherUnhandledExceptionEventArgs)">
+            <summary>
+            Writes information about unhandled exceptions to a log file.
+            </summary>
+            <param name="logfile">The path to the log file to be written to.</param>
+            <param name="e">The exception information.</param>
+        </member>
+        <member name="M:GW2_Addon_Manager.App.App.LogError(System.String,System.UnhandledExceptionEventArgs)">
+            <summary>
+            Writes information about unhandled exceptions to a log file.
+            </summary>
+            <param name="logfile">The path to the log file to be written to.</param>
+            <param name="e">The exception information.</param>
+        </member>
+        <member name="M:GW2_Addon_Manager.App.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.App.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:GW2_Addon_Manager.AddonInfoFromYaml">
+            <summary>
+            In-app corollary to update.yaml files.
+            </summary>
+        </member>
+        <member name="E:GW2_Addon_Manager.AddonInfoFromYaml.PropertyChanged">
+            <summary>
+            An event used to indicate that a property's value has changed.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.ApprovedList.FetchListFromRepo">
+            <summary>
+            Check current version of addon list against remote repo for changes and fetch them
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.ApprovedList.GenerateAddonList">
+            <summary>
+            Scans resources/addons directory to populate a collection used for displaying the list of available addons on the UI.
+            </summary>
+            <returns>A list of AddonInfo objects representing all approved add-ons.</returns>
+        </member>
+        <member name="T:GW2_Addon_Manager.Configuration">
+            <summary>
+            The <c>configuration</c> class contains various functions dealing with application configuration. 
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.Configuration.SetGamePath(System.String)">
+            <summary>
+            <c>SetGamePath</c> both sets the game path for the current application session to <paramref name="path"/> and records it in the configuration file.
+            </summary>
+            <param name="path">The game path.</param>
+        </member>
+        <member name="M:GW2_Addon_Manager.Configuration.SetCulture(System.String)">
+            <summary>
+            <c>SetCulture</c> both sets the culture for the current application session to <paramref name="culture"/> and records it in the configuration file.
+            </summary>
+            <param name="culture"></param>
+        </member>
+        <member name="M:GW2_Addon_Manager.Configuration.RestartApplication">
+            <summary>
+            Restarts the application.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.Configuration.CheckSelfUpdates">
+            <summary>
+            Checks if there is a new version of the application available.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.Configuration.DetermineSystemType">
+            <summary>
+            Attempts to read the game folder and determine whether the game is running on a 64 or 32-bit system.
+            Based on that, sets the 'bin_folder' property in the configuration file.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.Configuration.DeleteAllAddons">
+            <summary>
+            Deletes all addons, addon loader, and configuration data related to addons.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.GenericUpdater.GitCheckUpdate">
+            <summary>
+            Checks whether an update is required and performs it for an add-on hosted on Github.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.GenericUpdater.Download(System.String)">
+            <summary>
+            Downloads an add-on from the url specified in <paramref name="url"/> using the WebClient provided in <paramref name="client"/>.
+            </summary>
+            <param name="url"></param>
+            <param name="client"></param>
+        </member>
+        <member name="M:GW2_Addon_Manager.GenericUpdater.Install">
+            <summary>
+            Performs archive extraction and file IO operations to install the downloaded addon.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.LoaderSetup.#ctor(GW2_Addon_Manager.App.Configuration.IConfigurationManager)">
+            <summary>
+            Constructor; also sets some UI text to indicate that the addon loader is having an update check
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.LoaderSetup.HandleLoaderUpdate">
+            <summary>
+            Checks for update to addon loader and downloads if a new release is available
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GW2_Addon_Manager.OpeningViewModel">
+            <summary>
+            <c>OpeningViewModel</c> serves as the DataContext for OpeningView.xaml, which is the first screen encountered upon opening the application.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.SelectedAddons">
+            <summary>
+            The indices of the checked boxes in the list of addons displayed on the UI.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.AddonList">
+            <summary>
+            List of Addons
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.DescriptionText">
+            <summary>
+            Text content for the description panel.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.DeveloperText">
+            <summary>
+            The informational text showing the developer of the selected add-on.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.AddonWebsiteLink">
+            <summary>
+            The website link in the description panel.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.DeveloperVisibility">
+            <summary>
+            Visibility of the informational text showing the developer of the selected add-on.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.UpdateLinkVisibility">
+            <summary>
+            A string representing a visibility value for the Github releases link.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.UpdateProgressVisibility">
+            <summary>
+            A string representing a visibility value for the self-update download progress bar.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.DisableSelected">
+            <summary>
+            Handles the disable selected addons button.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.EnableSelected">
+            <summary>
+            Handles the enable selected addons button.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.DeleteSelected">
+            <summary>
+            Handles the delete selected addons button.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.CleanInstall">
+            <summary>
+            Handles the Reset to Clean Install button.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.ChangeLanguage">
+            <summary>
+            Handles the Change Language buttons.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.DownloadSelfUpdate">
+            <summary>
+            Handler for small button to download application update.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.CreateShortcut">
+            <summary>
+            Handles the create shortcut button under the options menu. <see cref="M:GW2_Addon_Manager.OpeningViewModel.cs_logic"/>
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.UpdateDownloadProgress">
+            <summary>
+            Binding for the value shown in the mini progress bar displayed when downloading a new version of the application.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.GamePath">
+            <summary>
+            Content of the text box that contains the game path the program is set to look for the game in.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.UpdateAvailable">
+            <summary>
+            A string that is assigned a value if there is an update available.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.OpeningViewModel.#ctor">
+            <summary>
+            This constructor initializes various default properties across the class and then
+            applies any updated values to them using <c>ApplyDefaultConfig</c>.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.OpeningViewModel.GetInstance">
+            <summary>
+            Fetches the only instance of the OpeningViewModel and creates it if it has not been initialized yet.
+            </summary>
+            <returns>An instance of OpeningViewModel</returns>
+        </member>
+        <member name="E:GW2_Addon_Manager.OpeningViewModel.PropertyChanged">
+            <summary>
+            An event used to indicate that a property's value has changed.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.OpeningViewModel.propertyChanged(System.String)">
+            <summary>
+            A method used in notifying that a property's value has changed.
+            </summary>
+            <param name="propertyName">The name of the property that changed value.</param>
+        </member>
+        <member name="M:GW2_Addon_Manager.OpeningViewModel.cs_logic">
+            <summary>
+            Creates a shortcut in the current user's start menu.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.PluginManagement.ForceRedownload">
+            <summary>
+            Sets version fields of all installed and enabled addons to a dummy value so they are redownloaded, then starts update process.
+            Intended for use if a user borks their install (probably by manually deleting something in the /addons/ folder).
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.PluginManagement.DeleteAll">
+            <summary>
+            Deletes all addons and resets config to default state.
+            <seealso cref="P:GW2_Addon_Manager.OpeningViewModel.CleanInstall"/>
+            <seealso cref="M:GW2_Addon_Manager.Configuration.DeleteAllAddons"/>
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.PluginManagement.DeleteSelected">
+            <summary>
+            Deletes the currently selected addons.
+            <seealso cref="P:GW2_Addon_Manager.OpeningViewModel.DeleteSelected"/>
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.PluginManagement.DisableSelected">
+            <summary>
+            Disables the currently selected addons.
+            <seealso cref="P:GW2_Addon_Manager.OpeningViewModel.DisableSelected"/>
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.PluginManagement.EnableSelected">
+            <summary>
+            Enables the currently selected addons.
+            <seealso cref="P:GW2_Addon_Manager.OpeningViewModel.EnableSelected"/>
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.PluginManagement.DisplayAddonStatus">
+            <summary>
+            Displays the latest status of the plugins on the opening screen (disabled, enabled, version, installed).
+            </summary>
+        </member>
+        <member name="T:GW2_Addon_Manager.SelfUpdate">
+            <summary>
+            Handles downloading a new version of the application.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.SelfUpdate.#ctor">
+            <summary>
+            Sets the viewmodel and starts the download of the latest release.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.SelfUpdate.downloadLatestRelease">
+            <summary>
+            Downloads the latest application release.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GW2_Addon_Manager.SelfUpdate.startUpdater">
+            <summary>
+            Starts the self-updater if an application update has been downloaded.
+            </summary>
+        </member>
+        <member name="T:GW2_Addon_Manager.AddonYamlReader">
+            <summary>
+            Intended to read update.yaml files provided in addons that adhere to a specific set of specifications laid out for use by GW2-UOAOM and GW2-AddOn-Loader.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.AddonYamlReader.getAddonInInfo(System.String)">
+            <summary>
+            Gets info for an add-on from update.yaml provided by the author or packaged with the application (when the author hasn't written one yet).
+            </summary>
+            <param name="name">The name of the addon folder to read from.</param>
+            <returns>An object with the information from update.yaml</returns>
+        </member>
+        <member name="M:GW2_Addon_Manager.AddonYamlReader.CheckForUpdateYaml(System.String,System.String)">
+            <summary>
+            Checks for a copy of Update.yaml in the directory given in <paramref name="search_folder"/> and if present copies it to an addon application resource folder specified in <paramref name="name"/>.
+            </summary>
+        </member>
+        <member name="T:GW2_Addon_Manager.UpdatingView">
+            <summary>
+            Interaction logic for Updating.xaml
+            </summary>
+            <summary>
+            UpdatingView
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.UpdatingView.#ctor">
+            <summary>
+            Sets the page's DataContext, initializes it, and begins the update process.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.UpdatingView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:GW2_Addon_Manager.UpdatingViewModel">
+            <summary>
+            <c>UpdatingViewModel</c> serves as the DataContext for UpdatingView.xaml, which is the screen displayed during and after the update process.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.UpdatingViewModel.CloseBtnEnabled">
+            <summary>
+            Binding for whether the "FINISH" button is enabled.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.UpdatingViewModel.BackBtnEnabled">
+            <summary>
+            Binding for whether the "BACK" button is enabled.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.UpdatingViewModel.ProgBarLabel">
+            <summary>
+            Binding for the label above the progress bar.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.UpdatingViewModel.DownloadProgress">
+            <summary>
+            Binding for the value shown in the progress bar.
+            </summary>
+        </member>
+        <member name="E:GW2_Addon_Manager.UpdatingViewModel.PropertyChanged">
+            <summary>
+            An event used to indicate that a property's value has changed.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.UpdatingViewModel.propertyChanged(System.String)">
+            <summary>x
+            A method used in notifying that a property's value has changed.
+            </summary>
+            <param name="propertyName">The name of the property that changed value.</param>
+        </member>
+        <member name="M:GW2_Addon_Manager.UpdatingViewModel.#ctor">
+            <summary>
+            The constructor sets the label to a placeholder value and disables the "finish" button.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.UpdatingViewModel.GetInstance">
+            <summary>
+            Accessor for the one instance of this class; if the instance has not been initialized, does that before returning it.
+            </summary>
+        </member>
+        <member name="T:GW2_Addon_Manager.OpeningView">
+            <summary>
+            Code-behind for OpeningView.xaml.
+            </summary>
+            <summary>
+            OpeningView
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.OpeningView.#ctor">
+            <summary>
+            This constructor deals with creating or expanding the configuration file, setting the DataContext, and checking for application updates.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.OpeningView.addOnList_SelectedIndexChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Takes care of description page text updating
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:GW2_Addon_Manager.OpeningView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:GW2_Addon_Manager.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.MainWindow.#ctor">
+            <summary>
+            Initializes the application's main window.
+            </summary>
+        </member>
+        <member name="M:GW2_Addon_Manager.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:GW2_Addon_Manager.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.Properties.Resources.GitHub_Mark_32px">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.Properties.Resources.GW2_UOAOU_UI">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:GW2_Addon_Manager.Properties.Resources.logo">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+            </summary>
+        </member>
+    </members>
+</doc>

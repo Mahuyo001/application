@@ -1,0 +1,13 @@
+LIBRARY addonLoader.dll
+EXPORTS
+
+; d3d11
+
+	D3D11CreateDevice
+	D3D11CreateDeviceAndSwapChain
+
+; dxgi
+
+	CreateDXGIFactory 
+	CreateDXGIFactory1 
+	CreateDXGIFactory2 
